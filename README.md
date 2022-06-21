@@ -38,6 +38,6 @@ The following animation demonstrates the application functionality:
 
 ## Final Product
 
-* The URL of the deployed application
+* The URL of the deployed application: https://alyak66.github.io/Work-Day-Scheduler/
 
-* The URL of the GitHub repository, with a unique name and a README describing the project
+* The URL of the GitHub repository: https://github.com/alyak66/Work-Day-Scheduler
