@@ -2,7 +2,7 @@ var events = [];
 var bufEventTime = "";
 var bufEventTxt = "";
 
-//display current date at the top of the app
+//display today's date at the top of the page
 var today = moment().format("dddd, MMMM Do, YYYY");
 //console.log(today);
 $("#currentDay").text(today);
@@ -52,7 +52,6 @@ $(".time-block").on("click", ".text-box", function () {
     textInput.trigger("focus");
     //these if statments will check to see if the parent text-box has the past, present, or fiture class
     //it will then add a class specifically to style the background of the textarea while it is in focus
-    //there may be a more efficient way of writing this using the existing past present and future classes
     if ($(this).hasClass("past")) {
         textInput.addClass("past-textarea");
     }
@@ -79,7 +78,7 @@ $(".save-btn").on("click", function() {
     if(eventText === undefined) {
         return;
     }
-    //get the string indicating which time block was clicked on, i.e. 7 am
+    //get the string indicating which time block was clicked on, i.e. 9 am
     var eventTime = $(this).siblings(".hour").text();
 
     //i want to only push the event to the array if it is truly a new event. If the user just 
@@ -91,7 +90,7 @@ $(".save-btn").on("click", function() {
     var newEvent = true;
     //loop through each element of the array
     for (var i = 0; i < events.length; i++) {
-        //this will evaluate to true if we find an event in the array that has a matching time (7 am) with the 
+        //this will evaluate to true if we find an event in the array that has a matching time (9 am) with the 
         //event that is being saved
         if (events[i].time === eventTime) {
                 /*if (!eventText){
@@ -125,26 +124,6 @@ $(".save-btn").on("click", function() {
     saveEvents();
 });
 
-//event listener for when the user is creating/editing an event. I wanted to have the text in the <textarea> revert back to a <p> element
-//in the event the <textarea> lost focus. I didn't want this to trigger a save, like clicking on the Save button, but rather discard any changes.
-//Unfortunately, I had too much trouble with the button "click" event handler and the textarea "blur" event handler stepping on each other's toes.
-//Ultimately, I had to remove the blur functionality and the <textarea> stays in place on the page until the Save button is pressed.
-/*$(".text-box").on("blur", "textarea", function() {
-    var eventText = $(this).val().trim();
-    var eventTime = $(this).parent(".text-box").siblings(".hour").text();
-    bufEventTime = eventTime;
-    bufEventTxt = eventText;
-    for (var i = 0; i < events.length; i++) {
-        if (events[i].time === eventTime){
-            eventText = events[i].text;
-        }
-    }
-    var textInput = $("<p>").addClass("event-text").text(eventText);
-    $(this).replaceWith(textInput);
-})*/
-
-
-
 //this function compares each timeBlock on the schedule and color codes it
 //gray = this timeBlock has already passed
 //green = this timeBlock is in the future
@@ -161,8 +140,8 @@ var auditEvents = function (eventEl) {
     //the [1] element will be either "am" or "pm"
     timeBlock = timeBlock.split(" ");
     
-    //we want to convert the time to a 24 hour clock and make sure timeBlock[0] is an int and not a string
-    //Noon is a special case since even though it is "pm", we don't watn to add 12 to it, so our if
+    //then I converted the time to a 24 hour clock and make sure timeBlock[0] is an int and not a string
+    //Noon is a special case since even though it is "pm", we don't want to add 12 to it, so our if
     //statement specifically excludes the noon event.
     if (timeBlock[1] === "pm" && timeBlock[0] !== "12"){
         timeBlock[0] = parseInt(timeBlock[0]);

@@ -1,34 +1,12 @@
 # Work Day Scheduler
 
-## Your Task
+## Issue
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+An employee with a very busy schedule want to add important events to a daily planner to manage time effectively and efficiently
 
-## User Story
+## Solution
 
-```
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
-
-## Acceptance Criteria
-
-```
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+A web based daily planner that can be used to create a schedule where data will not be lost. The employee will be able to save information if the page is refreshed so the data will not be lost. The timeblock color will give the empmloyee a sense of how their day is progressing and what their planned day looks like in the future. 
 
 ## Mock - Up Example
 
@@ -38,6 +16,6 @@ The following animation demonstrates the application functionality:
 
 ## Final Product
 
-* The URL of the deployed application
+* The URL of the deployed application: https://alyak66.github.io/Work-Day-Scheduler/
 
-* The URL of the GitHub repository, with a unique name and a README describing the project
+* The URL of the GitHub repository: https://github.com/alyak66/Work-Day-Scheduler
